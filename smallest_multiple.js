@@ -7,8 +7,16 @@
  *                            between 1 and `ceiling`
  */
 module.exports = function( ceiling ) {
-  // do work here
-
-
-  return 0;
+  var num = 1;
+  function checkNum() {
+    for (var i = 1; i <= ceiling; i++) {
+      if (num % i !== 0) {
+        return false;
+      }
+    }
+  }
+  while (checkNum() === false) {
+    num++;
+  }
+  return num;
 };
